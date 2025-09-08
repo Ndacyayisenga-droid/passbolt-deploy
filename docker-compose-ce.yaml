@@ -47,7 +47,6 @@ services:
     volumes:
       - gpg_volume:/etc/passbolt/gpg
       - jwt_volume:/etc/passbolt/jwt
-      - ./passbolt_cache:/usr/share/php/passbolt/tmp  # added cache volume
     entrypoint: >
       sh -c "su -s /bin/sh -m www-data -c \"/usr/share/php/passbolt/bin/cake passbolt register_user -u ndacyayinoah@gmail.com -f Noah -l Ndacyayi -r admin\""
 
