@@ -24,6 +24,9 @@ services:
       DATASOURCES_DEFAULT_USERNAME: "passbolt"
       DATASOURCES_DEFAULT_PASSWORD: "P4ssb0lt"
       DATASOURCES_DEFAULT_DATABASE: "passbolt"
+      # Enable self-registration
+      PASSBOLT_PLUGINS_SELF_REGISTRATION_ENABLED: "true"
+      PASSBOLT_PLUGINS_SELF_REGISTRATION_PROVIDER: "email"
     volumes:
       - gpg_volume:/etc/passbolt/gpg
       - jwt_volume:/etc/passbolt/jwt
