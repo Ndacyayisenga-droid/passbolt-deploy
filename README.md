@@ -1,0 +1,1 @@
+# Deploy passbolt to coolify
