@@ -40,7 +40,7 @@ services:
       - 86:86
       - 446:446
 
-    passbolt-init-user:
+  passbolt-init-user:
     image: passbolt/passbolt:latest-ce
     depends_on:
       - passbolt
