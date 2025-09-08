@@ -39,9 +39,16 @@ services:
     ports:
       - 86:86
       - 446:446
-    # Alternatively for non-root images:
-    # - 80:8080
-    # - 443:4433
+
+  passbolt-init-user:
+    image: passbolt/passbolt:latest-ce
+    depends_on:
+      - passbolt
+    volumes:
+      - gpg_volume:/etc/passbolt/gpg
+      - jwt_volume:/etc/passbolt/jwt
+    entrypoint: >
+      sh -c "su -s /bin/sh -m www-data -c \"/usr/share/php/passbolt/bin/cake passbolt register_user -u ndacyayinoah@gmail.com -f Tayebwa -l Noah -r admin\""
 
 volumes:
   database_volume:
