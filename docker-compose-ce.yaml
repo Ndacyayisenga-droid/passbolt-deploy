@@ -11,9 +11,10 @@ services:
       - database_volume:/var/lib/mysql
 
   passbolt:
+    container_name: passbolt_app  # fixed container name
     image: passbolt/passbolt:latest-ce
-    #Alternatively you can use rootless:
-    #image: passbolt/passbolt:latest-ce-non-root
+    # Alternatively you can use rootless:
+    # image: passbolt/passbolt:latest-ce-non-root
     restart: unless-stopped
     depends_on:
       - db
@@ -38,7 +39,7 @@ services:
     ports:
       - 86:86
       - 446:446
-    #Alternatively for non-root images:
+    # Alternatively for non-root images:
     # - 80:8080
     # - 443:4433
 
